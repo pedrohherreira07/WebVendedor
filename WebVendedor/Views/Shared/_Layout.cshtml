@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    @await Html.PartialAsync("_Head")
+</head>
+<body>
+    <div id="wrapper">
+        @await Html.PartialAsync("_Topo")
+        @await Html.PartialAsync("_Menu")
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="msg_topo"></div>
+                        <h2>@ViewBag.Titulo</h2>
+                        <h5>@ViewBag.SubTitulo</h5>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                <hr />
+                @RenderBody()
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+</body>
+</html>

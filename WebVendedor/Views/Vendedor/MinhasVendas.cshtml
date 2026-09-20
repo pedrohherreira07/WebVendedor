@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "_layout";
+}
+<div class="form-group col-md-4">
+    <label>Data inicial</label>
+    <input class="form-control" type="date" />
+</div>
+<div class="form-group col-md-4">
+    <label>Data final</label>
+    <input class="form-control" type="date" />
+</div>
+<div class="form-group col-md-4">
+    <label>Forma de pagamento</label>
+    @await Html.PartialAsync("../Shared/Componentes/_FormaPgto")
+</div>
+<button class="btn btn-primary btn-lg center-block">Pesquisar</button>
+<br />
+<div class="row">
+    <div class="col-md-12">
+        <!-- Advanced Tables -->
+        <div class="panel panel-default">
+            <div class="panel-heading">Vendas encontrada(s)</div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                        <thead>
+                            <tr>
+                                <th>Marca</th>
+                                <th>Modelo</th>
+                                <th>Cor</th>
+                                <th>R$ Venda</th>
+                                <th>Cliente</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="odd gradeX">
+                                <td>(marca)</td>
+                                <td>(modelo)</td>
+                                <td>(cor)</td>
+                                <td>(R$ venda)</td>
+                                <td>(cliente)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <!--End Advanced Tables -->
+    </div>
+</div>

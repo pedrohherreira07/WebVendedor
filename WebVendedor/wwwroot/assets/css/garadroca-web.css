@@ -1,0 +1,328 @@
+/*=============================================================
+    GaraDroca — camada de estilização web
+    Carregar DEPOIS de bootstrap.css e custom.css.
+    Não edita o custom.css do professor — só sobrescreve por cima,
+    igual fizemos no Tema.cs do desktop (nunca trocamos o tipo do
+    controle, só a aparência).
+   ========================================================== */
+
+:root {
+    --gd-primaria: #172A58; /* navy — mesma do Tema.cs do desktop */
+    --gd-primaria-hover: #22376E;
+    --gd-primaria-escura: #0F1D3E;
+    --gd-sucesso: #168A5C; /* Cadastrar */
+    --gd-alerta: #D97706; /* Alterar */
+    --gd-perigo: #DC2626; /* Excluir */
+    --gd-neutro: #64748B; /* Cancelar */
+    --gd-info: #2E6FA3; /* ações informativas/neutras (ex: "Ver detalhes") */
+
+    --gd-fundo: #D6DCE6; /* fundo da página */
+    --gd-superficie: #FFFFFF; /* cards/panels */
+    --gd-borda: #DEE4EC;
+    --gd-texto: #1E293B;
+    --gd-texto-suave: #64748B;
+    --gd-raio: 10px; /* raio padrão de card/painel */
+    --gd-raio-botao: 8px; /* raio padrão de botão/input */
+}
+
+body {
+    background-color: var(--gd-fundo);
+    color: var(--gd-texto);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--gd-primaria);
+}
+
+/*==============================================
+    ESTRUTURA GERAL
+    =============================================*/
+#wrapper {
+    background: var(--gd-primaria);
+}
+
+#page-wrapper {
+    background: var(--gd-fundo);
+}
+
+#page-inner {
+    background-color: var(--gd-superficie) !important;
+    border-radius: var(--gd-raio);
+    box-shadow: 0 2px 10px rgba(23, 42, 88, 0.07);
+}
+
+/*==============================================
+    TOPO E MENU LATERAL — navy, igual à sidebar do desktop
+    =============================================*/
+.navbar-cls-top {
+    background: var(--gd-primaria);
+}
+
+    .navbar-cls-top .navbar-brand {
+        background: var(--gd-primaria-escura);
+        color: #fff;
+    }
+
+        .navbar-cls-top .navbar-brand:hover {
+            background: var(--gd-primaria-hover);
+            color: #fff;
+        }
+
+.navbar-header {
+    background: var(--gd-primaria-escura);
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: var(--gd-primaria-hover);
+}
+
+.navbar-side {
+    background-color: var(--gd-primaria);
+}
+
+.sidebar-collapse .nav > li > a {
+    color: #fff;
+    background: var(--gd-primaria);
+    transition: background 0.15s ease;
+}
+
+    .sidebar-collapse .nav > li > a:hover,
+    .sidebar-collapse .nav > li > a:focus {
+        background: var(--gd-primaria-hover);
+    }
+
+.sidebar-collapse > .nav > li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.active-menu {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border-left: 4px solid #fff;
+}
+
+    .active-menu > a {
+        color: #fff !important;
+        font-weight: 700;
+    }
+
+/* os tracinhos indicadores do submenu (antes vermelhos) */
+.nav-second-level > li > a:before,
+.nav-third-level > li > a:before,
+.nav-second-level > li > a:after,
+.nav-third-level > li > a:after {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/*==============================================
+    BOTÕES — mesma hierarquia do desktop:
+    ação principal sólida, secundárias em contorno com hover sólido
+    =============================================*/
+.btn {
+    border-radius: var(--gd-raio-botao);
+    font-weight: 600;
+    padding: 8px 18px;
+    transition: all 0.15s ease;
+    border-width: 1px;
+}
+
+.btn-primary {
+    background-color: var(--gd-primaria);
+    border-color: var(--gd-primaria);
+    color: #fff;
+}
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+        background-color: var(--gd-primaria-hover);
+        border-color: var(--gd-primaria-hover);
+    }
+
+.btn-success {
+    background-color: var(--gd-sucesso);
+    border-color: var(--gd-sucesso);
+    color: #fff;
+}
+
+    .btn-success:hover,
+    .btn-success:focus {
+        background-color: #12704B;
+        border-color: #12704B;
+    }
+
+.btn-warning {
+    background-color: #fff;
+    border-color: var(--gd-alerta);
+    color: var(--gd-alerta);
+}
+
+    .btn-warning:hover,
+    .btn-warning:focus {
+        background-color: var(--gd-alerta);
+        border-color: var(--gd-alerta);
+        color: #fff;
+    }
+
+.btn-danger {
+    background-color: #fff;
+    border-color: var(--gd-perigo);
+    color: var(--gd-perigo);
+}
+
+    .btn-danger:hover,
+    .btn-danger:focus {
+        background-color: var(--gd-perigo);
+        border-color: var(--gd-perigo);
+        color: #fff;
+    }
+
+.btn-default {
+    background-color: #fff;
+    border-color: var(--gd-borda);
+    color: var(--gd-neutro);
+}
+
+    .btn-default:hover,
+    .btn-default:focus {
+        background-color: var(--gd-fundo);
+        border-color: var(--gd-neutro);
+        color: var(--gd-texto);
+    }
+
+.btn-info {
+    background-color: #fff;
+    border-color: var(--gd-info);
+    color: var(--gd-info);
+}
+
+    .btn-info:hover,
+    .btn-info:focus {
+        background-color: var(--gd-info);
+        border-color: var(--gd-info);
+        color: #fff;
+    }
+
+/* variante opcional bem arredondada (pílula), pra CTAs de destaque */
+.btn-pill {
+    border-radius: 999px;
+}
+
+/* o botão hambúrguer do menu mobile usa classes .btn/.navbar-toggle juntas
+   em templates Bootstrap 3 — sem isso, a regra genérica .btn acima estica
+   o padding dele e deixa fundo branco, escondendo as 3 barrinhas brancas */
+.navbar-toggle.btn,
+.navbar-toggle {
+    padding: 9px 10px;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+    .navbar-toggle .icon-bar {
+        background-color: #fff;
+    }
+
+/*==============================================
+    PANELS (cards do Bootstrap 3) — título + linha divisória,
+    igual ao GroupBox do desktop
+    =============================================*/
+.panel {
+    border: 1px solid var(--gd-borda);
+    border-radius: var(--gd-raio);
+    box-shadow: 0 2px 8px rgba(23, 42, 88, 0.06);
+}
+
+.panel-default > .panel-heading {
+    background-color: #fff;
+    border-bottom: 1px solid var(--gd-borda);
+    border-radius: var(--gd-raio) var(--gd-raio) 0 0;
+    color: var(--gd-primaria);
+    font-weight: 700;
+    padding: 16px 20px;
+}
+
+.panel-body {
+    padding: 20px;
+}
+
+.panel-back {
+    background-color: var(--gd-fundo);
+}
+
+/*==============================================
+    FORMULÁRIOS — igual ao foco sutil do TextBox no desktop
+    =============================================*/
+.form-control {
+    border: 1px solid var(--gd-borda);
+    border-radius: var(--gd-raio-botao);
+    color: var(--gd-texto);
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+    .form-control:focus {
+        border-color: var(--gd-primaria);
+        background-color: #F5F8FC;
+        box-shadow: 0 0 0 3px rgba(23, 42, 88, 0.10);
+    }
+
+label {
+    color: var(--gd-texto-suave);
+    font-weight: 600;
+}
+
+/*==============================================
+    TABELAS
+    =============================================*/
+.table > thead > tr > th {
+    background-color: var(--gd-primaria);
+    color: #fff;
+    border-bottom: none;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #FAFBFC;
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: #F5F8FC;
+}
+
+/*==============================================
+    DASHBOARD — cards de indicador (noti-box), reaproveitando
+    as cores por intenção em vez das cores soltas do template
+    =============================================*/
+.bg-color-green {
+    background-color: var(--gd-sucesso);
+    color: #fff;
+}
+
+.bg-color-blue {
+    background-color: var(--gd-primaria);
+    color: #fff;
+}
+
+.bg-color-red {
+    background-color: var(--gd-perigo);
+    color: #fff;
+}
+
+.bg-color-brown {
+    background-color: var(--gd-alerta);
+    color: #fff;
+}
+
+.back-dash {
+    border-radius: var(--gd-raio);
+    background-color: var(--gd-primaria);
+}
+
+.set-icon {
+    border-radius: 16px; /* ícone com canto suave em vez de círculo perfeito, mais discreto */
+}
+
+.btn-circle {
+    border-radius: 50%;
+}
+
+.campo-erro {
+    border: 2px solid red;
+}
