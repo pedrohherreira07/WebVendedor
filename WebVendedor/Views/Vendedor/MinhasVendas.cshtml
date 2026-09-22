@@ -1,19 +1,30 @@
 ﻿@{
     Layout = "_layout";
 }
-<div class="form-group col-md-4">
-    <label>Data inicial</label>
-    <input class="form-control" type="date" />
+<div id="dadosFiltro">
+    <div class="form-group col-md-4">
+        <label>Data inicial</label>
+        <input class="form-control" type="date" id="dataInicial" obg />
+    </div>
+    <div class="form-group col-md-4">
+        <label>Data final</label>
+        <input class="form-control" type="date" id="dataFinal" obg />
+    </div>
+    <div class="form-group col-md-4">
+        <label>Forma de pagamento</label>
+        <select class="form-control">
+            <option value="">Selecione</option>
+            <option value="1">Dinheiro</option>
+            <option value="">Cheque</option>
+            <option value="3">PIX</option>
+            <option value="4">Cartão de crédito</option>
+            <option value="5">Cartão de débito</option>
+            <option value="6">Boleto</option>
+            <option value="7">Financiamento</option>
+        </select>
+    </div>
 </div>
-<div class="form-group col-md-4">
-    <label>Data final</label>
-    <input class="form-control" type="date" />
-</div>
-<div class="form-group col-md-4">
-    <label>Forma de pagamento</label>
-    @await Html.PartialAsync("../Shared/Componentes/_FormaPgto")
-</div>
-<button class="btn btn-primary btn-lg center-block">Pesquisar</button>
+<button class="btn btn-primary btn-lg center-block" id="btnPesquisar">Pesquisar</button>
 <br />
 <div class="row">
     <div class="col-md-12">
@@ -49,3 +60,7 @@
         <!--End Advanced Tables -->
     </div>
 </div>
+<script src="~/js-sistema/venda.js"></script>
+<script>
+    getElemento("btnPesquisar").addEventListener("click", filtrarMinhasVendas)
+</script>

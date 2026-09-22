@@ -326,3 +326,16 @@ label {
 .campo-erro {
     border: 2px solid red;
 }
+
+#msg_topo {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 99999;
+    display: block;
+    min-width: 200px;
+}
+
+.alert {
+    box-shadow: 0 10px 12px rgba(0,0,0,0.1); /*efeito de profundidade*/
+}

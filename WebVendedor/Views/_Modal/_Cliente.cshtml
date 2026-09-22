@@ -5,30 +5,31 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title" id="myModalLabel">Cadastrar cliente</h4>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" id="dadosCliente">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Nome</label>
-                            <input class="form-control" placeholder="Altere seu nome..." />
+                            <input class="form-control" placeholder="Insira seu nome..." obg id="nome"/>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Telefone</label>
-                            <input class="form-control" placeholder="Altere seu telefone..." />
+                            <input class="form-control" placeholder="Insira seu telefone..." obg id="telefone"/>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Endereço</label>
-                    <input class="form-control" placeholder="Altere seu endereço..." />
+                    <input class="form-control" placeholder="Insira seu endereço..." obg id="endereco"/>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Salvar</button>
+                <button type="button" class="btn btn-primary" id="btnSalvar">Salvar</button>
             </div>
         </div>
     </div>
 </div>
+

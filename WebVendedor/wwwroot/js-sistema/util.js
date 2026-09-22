@@ -23,6 +23,10 @@ function exibirMsg(cod, msg) {
             divMsg.innerHTML = `<div class="alert alert-info">${msg}</div>`
             break;
     }
+
+    setTimeout(() => {
+        divMsg.innerHTML = ""
+    },3000)
 }
 
 function getValue(id) {
@@ -39,14 +43,14 @@ function getValue(id) {
 
 function getElemento(id) {
 
-    const campo = document.getElementById(id)
+    const item = document.getElementById(id)
 
-    if (!campo) {
+    if (!item) {
         console.warn(`o ${id} não existe`)
         return null
     }
 
-    return campo
+    return item
 }
 
 function validarCampos(idPai) {

@@ -19,8 +19,10 @@
         <input class="form-control" placeholder="Altere seu endereço..." id="endereco" obg/>
     </div>
     <div class="col-md-12">
-        <button class="btn btn-success" onclick="salvar()" id="btnSalvar">Salvar</button>
+        <button class="btn btn-success" id="btnSalvar">Salvar</button>
     </div>
 </div>
 <script src="~/js-sistema/vendedor.js"></script>
-<script src="~/js-sistema/constantes.js"></script>
+<script>
+    getElemento("btnSalvar").addEventListener("click", salvar)
+</script>

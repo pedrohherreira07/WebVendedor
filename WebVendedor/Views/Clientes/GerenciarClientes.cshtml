@@ -2,7 +2,6 @@
     Layout = "_layout";
 }
 <button class="btn btn-primary btn-lg center-block" data-toggle="modal" data-target="#modalCliente">+ Novo cliente</button>
-@await Html.PartialAsync("../_Modal/_Cliente")
 <br />
 <div class="row">
     <div class="col-md-12">
@@ -39,3 +38,7 @@
         <!--End Advanced Tables -->
     </div>
 </div>
+@await Html.PartialAsync("../_Modal/_Cliente")
+<script>
+    getElemento("btnSalvar").addEventListener("click", salvar)
+</script>

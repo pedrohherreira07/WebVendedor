@@ -53,3 +53,7 @@
 </div>
 @await Html.PartialAsync("../_Modal/_DetalhesVeiculo")
 @await Html.PartialAsync("../_Modal/_FinalizarVenda")
+<script src="~/js-sistema/venda.js"></script>
+<script>
+    getElemento("btnFinalizar").addEventListener("click", finalizar)
+</script>
