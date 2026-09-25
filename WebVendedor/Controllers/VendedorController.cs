@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebVendedor.DTO;
 
 namespace WebVendedor.Controllers
 {
     public class VendedorController : Controller
     {
+        #region Carregar as páginas
         public IActionResult MeusDados()
         {
             ViewBag.Titulo = "Meus dados";
@@ -29,5 +31,24 @@ namespace WebVendedor.Controllers
             ViewBag.SubTitulo = "Aqui você poderá cadastrar seus clientes, realizar vendas e consultar seus resultados";
             return View();
         }
+
+        #endregion
+
+        #region API 
+
+        [HttpPut("/Vendedor/GravarMeusDados")]
+
+        public async Task<IActionResult> Gravar([FromBody] GravarVendedorDTO objTela)
+        {
+            if(string.IsNullOrWhiteSpace(objTela.Nome) || string.IsNullOrWhiteSpace(objTela.Telefone) ||
+                string.IsNullOrWhiteSpace(objTela.Email) || string.IsNullOrWhiteSpace(objTela.Endereco))
+            {
+                return BadRequest(new ResponseDTO {Codigo=0, Mensagem="Preencher os campos"});
+            }
+            
+            return Ok();
+        }
+
+        #endregion
     }
 }
